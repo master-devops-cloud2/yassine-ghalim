@@ -20,9 +20,12 @@ jobs:
         uses: actions/setup-java@v3
         with:
           java-version: '17'
-          distribution: 'temurin'  # Correct distribution name for JDK 17
-          java-package: 'jdk'  # Ensures JDK installation
-          check-latest: false  # Prevents checking for the latest version
+          distribution: 'temurin'
+          java-package: 'jdk'
+          check-latest: false
+
+      - name: Change directory to the project folder
+        run: cd ./your-subdirectory  # Replace 'your-subdirectory' with the path to your directory containing the pom.xml
 
       - name: Cache Maven dependencies
         uses: actions/cache@v3
@@ -37,3 +40,4 @@ jobs:
 
       - name: Run Tests
         run: mvn test  # Run tests with Maven
+
