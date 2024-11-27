@@ -3,7 +3,7 @@ name: Run Java Tests
 on:
   pull_request:
     branches:
-      - main  # Target branch for the tests
+      - main
   push:
     branches:
       - main
@@ -25,7 +25,7 @@ jobs:
           check-latest: false
 
       - name: Change directory to the project folder
-        run: cd ./your-subdirectory  # Replace 'your-subdirectory' with the path to your directory containing the pom.xml
+        run: cd ./project  # Replace 'project' with the actual folder name containing your pom.xml
 
       - name: Cache Maven dependencies
         uses: actions/cache@v3
@@ -40,4 +40,3 @@ jobs:
 
       - name: Run Tests
         run: mvn test  # Run tests with Maven
-
